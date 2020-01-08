@@ -36,48 +36,49 @@ if( empty($_SESSION['username']) ){
 <!-- Menampilkan isi session username -->
 <h3> Hallo Selamat Datang <?php echo $_SESSION['username']; ?> </h3>
 <a href="tambah.php"><button type="button" class="btn btn-success">Tambah Data</button></a>
- <?php
-    $host = "dewserver.database.windows.net";
-    $user = "dewadmin";
-    $pass = "Dewohat97";
-    $db = "yemDB";
-
-    try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    } catch(Exception $e) {
-        echo "Failed: " . $e;
-    }
+    <div class="table-responsive">
+        <?php
+        $host = "dewserver.database.windows.net";
+        $user = "dewadmin";
+        $pass = "Dewohat97";
+        $db = "yemDB";
 
         try {
-            $sql_select = "SELECT * FROM mhs_dew";
-            $stmt = $conn->query($sql_select);
-            $registrants = $stmt->fetchAll(); 
-            if(count($registrants) > 0) {
-                
-                echo '<table class="table">';
-                echo '<tr><th scope="col">Name</th>';
-                echo '<th scope="col">NIM</th>';
-                echo '<th scope="col">Prodi</th>';
-                echo '<th scope="col">Date</th></tr>';
-
-                foreach($registrants as $registrant) {
-                    echo "<tr><td>".$registrant['nama_dew']."</td>";
-                    echo "<td>".$registrant['nim_dew']."</td>";
-                    echo "<td>".$registrant['prodi_dew']."</td>";
-                    echo "<td>".$registrant['date']."</td></tr>";
-
-                }
-                echo "</table>";
-            } else {
-                echo "<h3>Tidak Ada Data Mahasiswa</h3>";
-            }
+            $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+            $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         } catch(Exception $e) {
             echo "Failed: " . $e;
         }
-    
 
- ?>
+            try {
+                $sql_select = "SELECT * FROM mhs_dew";
+                $stmt = $conn->query($sql_select);
+                $registrants = $stmt->fetchAll(); 
+                if(count($registrants) > 0) {
+                    
+                    echo '<table class="table">';
+                    echo '<tr><th scope="col">Name</th>';
+                    echo '<th scope="col">NIM</th>';
+                    echo '<th scope="col">Prodi</th>';
+                    echo '<th scope="col">Date</th></tr>';
+
+                    foreach($registrants as $registrant) {
+                        echo "<tr><td>".$registrant['nama_dew']."</td>";
+                        echo "<td>".$registrant['nim_dew']."</td>";
+                        echo "<td>".$registrant['prodi_dew']."</td>";
+                        echo "<td>".$registrant['date']."</td></tr>";
+
+                    }
+                    echo "</table>";
+                } else {
+                    echo "<h3>Tidak Ada Data Mahasiswa</h3>";
+                }
+            } catch(Exception $e) {
+                echo "Failed: " . $e;
+            }
+
+        ?>
+    </div>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
