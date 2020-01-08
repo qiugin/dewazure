@@ -26,10 +26,10 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "dewserver.database.windows.net";
-    $user = "dew";
+    $host = "<dewserver.database.windows.net>";
+    $user = "<dew>";
     $pass = "Asboginhat97";
-    $db = "Registration";
+    $db = "<dbo.Registration>";
 
     try {
         $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
@@ -57,7 +57,7 @@
             echo "Failed: " . $e;
         }
 
-        echo "<h3>Your're registered!</h3>";
+        echo "<h3>Your're registered! v1</h3>";
     } else if (isset($_POST['load_data'])) {
         try {
             $sql_select = "SELECT * FROM Registration";
