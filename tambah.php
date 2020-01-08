@@ -67,8 +67,6 @@ if( empty($_SESSION['email']) ){
             echo "Failed: " . $e;
         }
         echo "berhasil Menambahkan Data"
-    }else{
-        echo "data gagal";
     }
  ?>
  </body>
