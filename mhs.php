@@ -19,7 +19,8 @@ if( empty($_SESSION['username']) ){
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      <link rel="stylesheet" href="css/style.css">
-     <title>SIA</title>
+     <title>Dew Azure Web</title>
+
  </head>
  <body>
 
@@ -53,8 +54,7 @@ if( empty($_SESSION['username']) ){
             $stmt = $conn->query($sql_select);
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
-                echo '<a href="tambah.php">Tambah Data</a>';
-                echo '<a href="tambah.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tambah Data</button></a>';
+                echo '<a href="tambah.php"><button type="button" class="btn btn-success">Tambah Data</button></a>';
                 echo "<table>";
                 echo "<tr><th>Name</th>";
                 echo "<th>NIM</th>";
