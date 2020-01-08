@@ -30,9 +30,17 @@ if( empty($_SESSION['username']) ){
     <a href="mhs.php"><button type="button" class="btn btn-info">Daftar Mahasiswa</button></a>
     
     <form class="form" method="post" action="" enctype="multipart/form-data" >
-          Name  <input type="text" name="nama_dew" id="nama_dew"/></br></br>
-          NIM <input type="text" name="nim_dew" id="nim_dew"/></br></br>
-          Prodi <input type="text" name="prodi_dew" id="prodi_dew"/></br></br>
+          Name : 
+          <input type="text" name="nama_dew" id="nama_dew"/></br></br>
+          NIM : 
+          <input type="text" name="nim_dew" id="nim_dew"/></br></br>
+          Prodi
+          <select name="prodi_dew">
+            <option value="informatika">informatika</option>
+            <option value="arsitektur">arsitektur</option>
+            <option value="filsafat">filsafat</option>
+            <option value="matematika">matematika</option>
+        </select>
           <input type="submit" name="submit" value="Tambah" />
     </form>
 </div>
