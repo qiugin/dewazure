@@ -37,17 +37,7 @@
             $stmt = $conn->query($sql_select);
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
-                echo "<h2>People who are registered:</h2>";
-                echo "<table>";
-                echo "<tr><th>Name</th>";
-                echo "<th>Email</th>";
-                echo "<th>Job</th>";
-                foreach($registrants as $registrant) {
-                    echo "<tr><td>".$registrant['nama_dew']."</td>";
-                    echo "<td>".$registrant['nim_dew']."</td>";
-                    echo "<td>".$registrant['prodi_dew']."</td>";
-                }
-                echo "</table>";
+                
 
 
                 echo "dew";
@@ -59,15 +49,6 @@
         } catch(Exception $e) {
             echo "Failed: " . $e;
         }
-
-
-
-
-        $query_mysql = mysqli_query($conn,"SELECT * FROM mhs_dew")or die(mysql_error());
-        $nomor = 1; 
-        $data = mysqli_fetch_array($query_mysql);
-        echo var_dump($data);
-    
  ?>
 
 
