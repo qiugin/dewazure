@@ -34,7 +34,6 @@ if( empty($_SESSION['email']) ){
           nim <input type="text" name="nim_dew" id="nim_dew"/></br></br>
           prodi <input type="text" name="prodi_dew" id="prodi_dew"/></br></br>
           <input type="submit" name="submit" value="Tambah" />
-          <button type="button" name="submit" class="btn btn-success">Success</button>
     </form>
 </div>
 
