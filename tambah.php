@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// check apakah session email sudah ada atau belum.
+// jika belum maka akan diredirect ke halaman index (login)
+if( empty($_SESSION['email']) ){
+    header('Location: index.php');
+}
+
+?>
+
+
 <html>
  <head>
  <Title>Registration Form</Title>
@@ -18,12 +30,12 @@
  <body>
  <h1>Register here!</h1>
  <p>Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
+ <a href="mhs.php">List Mahasiswa</a>
  <form method="post" action="" enctype="multipart/form-data" >
        Name  <input type="text" name="nama_dew" id="nama_dew"/></br></br>
        nim <input type="text" name="nim_dew" id="nim_dew"/></br></br>
        prodi <input type="text" name="prodi_dew" id="prodi_dew"/></br></br>
        <input type="submit" name="submit" value="Submit" />
-       <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
     $host = "dewserver.database.windows.net";
@@ -55,7 +67,7 @@
             echo "Failed: " . $e;
         }
 
-        echo "<h3>Your're registered!</h3>";
+        header("location:mhs.php");
     }
  ?>
  </body>
