@@ -27,7 +27,7 @@ if( empty($_SESSION['username']) ){
  <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand">DEW</a>
   <form class="form-inline">
-    <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button></a>
+    <a href="logout.php">Logout</a>
     
   </form>
 </nav>
