@@ -13,11 +13,11 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
 
     // validasi login benar atau salah
-    if($email == 'lukman@carakode.com' AND $password == 'carakode'){
+    if($email == 'dew' AND $password == 'dew'){
 
         // jika login benar maka email akan disimpan ke session kemudian akan di redirect ke halaman profil
         $_SESSION['email'] = $email;
-        header('Location: profil.php');
+        header('Location: mhs.php');
     }else{
 
         // jika login salah maka variabel form_error diisi value seperti dibawah
