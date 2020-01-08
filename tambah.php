@@ -63,11 +63,11 @@ if( empty($_SESSION['email']) ){
             $stmt->bindValue(2, $email);
             $stmt->bindValue(3, $job);
             $stmt->execute();
+            header("location:mhs.php");
         } catch(Exception $e) {
             echo "Failed: " . $e;
         }
 
-        header("location:mhs.php");
     }
  ?>
  </body>
