@@ -67,8 +67,8 @@ if( empty($_SESSION['username']) ){
             $date = date("Y-m-d");
 
             // Insert data
-            $sql_insert = "INSERT INTO mhs_dew (nama_dew, nim_dew, prodi_dew) 
-                        VALUES (?,?,?)";
+            $sql_insert = "INSERT INTO mhs_dew (nama_dew, nim_dew, prodi_dew, date) 
+                        VALUES (?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $nama);
             $stmt->bindValue(2, $nim);
