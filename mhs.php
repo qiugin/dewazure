@@ -35,7 +35,7 @@ if( empty($_SESSION['username']) ){
 <div class="center2">
 <!-- Menampilkan isi session username -->
 <h3> Hallo Selamat Datang <?php echo $_SESSION['username']; ?> </h3>
-    
+<a href="tambah.php"><button type="button" class="btn btn-success">Tambah Data</button></a>;
  <?php
     $host = "dewserver.database.windows.net";
     $user = "dewadmin";
@@ -54,7 +54,7 @@ if( empty($_SESSION['username']) ){
             $stmt = $conn->query($sql_select);
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
-                echo '<a href="tambah.php"><button type="button" class="btn btn-success">Tambah Data</button></a>';
+                
                 echo '<table class="table">';
                 echo '<tr><th scope="col">Name</th>';
                 echo '<th scope="col">NIM</th>';
