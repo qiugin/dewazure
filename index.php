@@ -33,19 +33,17 @@
 
 
         try {
-            $sql_select = "SELECT * FROM mhs_dew";
-            $stmt = $conn->query($sql_select);
-            $registrants = $stmt->fetchAll(); 
-            if(count($registrants) > 0) {
                 
 
 
-                echo "dew";
+            $query_mysql = mysql_query($conn,"SELECT * FROM user")or die(mysql_error());
+            $nomor = 1;
+            $data = mysql_fetch_array($query_mysql);
+            echo var_dump($data);
 
 
-            } else {
-                echo "<h3>No one is currently registered.</h3>";
-            }
+
+
         } catch(Exception $e) {
             echo "Failed: " . $e;
         }
