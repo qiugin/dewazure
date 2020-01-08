@@ -19,9 +19,9 @@
  <h1>Register here!</h1>
  <p>Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
  <form method="post" action="" enctype="multipart/form-data" >
-       Name  <input type="text" name="name" id="name"/></br></br>
-       nim <input type="text" name="email" id="email"/></br></br>
-       prodi <input type="text" name="job" id="job"/></br></br>
+       Name  <input type="text" name="nama_dew" id="nama_dew"/></br></br>
+       nim <input type="text" name="nim_dew" id="nim_dew"/></br></br>
+       prodi <input type="text" name="prodi_dew" id="prodi_dew"/></br></br>
        <input type="submit" name="submit" value="Submit" />
        <input type="submit" name="load_data" value="Load Data" />
  </form>
