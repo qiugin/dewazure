@@ -9,20 +9,20 @@ $form_error = '';
 if(isset($_POST['submit'])){
 
     // menyimpan data yang dikirim dari metode POST ke masing-masing variabel
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
     // validasi login benar atau salah
-    if($email == 'dew' AND $password == 'dew'){
+    if($username == 'dew' AND $password == 'dew'){
 
-        // jika login benar maka email akan disimpan ke session kemudian akan di redirect ke halaman profil
-        $_SESSION['email'] = $email;
+        // jika login benar maka username akan disimpan ke session kemudian akan di redirect ke halaman profil
+        $_SESSION['username'] = $username;
         header('Location: mhs.php');
     }else{
 
         // jika login salah maka variabel form_error diisi value seperti dibawah
         // nilai variabel ini akan ditampilkan di halaman login jika salah
-        $form_error = '<p>Password atau email yang kamu masukkan salah</p>';
+        $form_error = '<p>Password atau username yang kamu masukkan salah</p>';
     }
 }
 
@@ -30,18 +30,25 @@ if(isset($_POST['submit'])){
 
 <!DOCTYPE html>
 <head>
-    <title>Login Sederhana Tanpa Database</title>
+<meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <link rel="stylesheet" href="css/style.css">
+     <title>SIA</title>
 </head>
 <body>
+<div class="center">
 
     <h3>Silakan Login</h3>
 
     <form method="POST" action="index.php">
-        Email : <input type="text" name="email"><br>
+        Username : <input type="text" name="username"><br>
         Password : <input type="password" name="password"><br>
         <?php echo $form_error; ?>
         <input type="submit" name="submit" value="Login">
     </form>
-    
+</div>
 </body>
 </html>
