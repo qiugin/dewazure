@@ -62,6 +62,7 @@
         $nomor = 1; 
         $data = mysqli_fetch_array($query_mysql);
         echo var_dump($data);
+        echo "dew";
     
  ?>
 
