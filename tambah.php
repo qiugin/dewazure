@@ -66,7 +66,7 @@ if( empty($_SESSION['email']) ){
         } catch(Exception $e) {
             echo "Failed: " . $e;
         }
-        echo "berhasil Menambahkan Data"
+        echo "berhasil Menambahkan Data";
     }
  ?>
  </body>
