@@ -55,11 +55,10 @@ if( empty($_SESSION['username']) ){
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
                 echo '<a href="tambah.php"><button type="button" class="btn btn-success">Tambah Data</button></a>';
-                echo "<table>";
-                echo "<tr><th>Name</th>";
-                echo "<th>NIM</th>";
-                echo "<th>Prodi</th>";
-                echo "<th>Date</th></tr>";
+                echo '<table class="table">';
+                echo '<tr><th scope="col">Name</th>';
+                echo '<th scope="col">NIM</th>';
+                echo '<th scope="col">Prodi</th>';
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['nama_dew']."</td>";
                     echo "<td>".$registrant['nim_dew']."</td>";
