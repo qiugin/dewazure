@@ -12,7 +12,7 @@
 $sql_select = "SELECT * FROM mhs_dew";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
-if(count($registrants) > 0) {
+
 	echo "<h2>People who are registered:</h2>";
 	echo "<table>";
 	echo "<tr><th>Name</th>";
@@ -25,9 +25,6 @@ if(count($registrants) > 0) {
 		echo "<td>".$registrant['prodi_dew']."</td>";
 	}
 	echo "</table>";
-} else {
-	echo "<h3>No one is currently registered.</h3>";
-}
 
 ?>
 </body>
