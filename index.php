@@ -58,5 +58,23 @@
  ?>
 
 
+<h3>Data user</h3>
+	<table border="1" class="table">
+		<tr>
+			<th>No</th>
+			<th>Nama</th>
+			<th>Alamat</th>
+			<th>Pekerjaan</th>
+			<th>Opsi</th>		
+		</tr>
+		<?php 
+		include "koneksi.php";
+		$query_mysql = mysqli_query($conn,"SELECT * FROM mhs_dew")or die(mysql_error());
+        $nomor = 1;
+        $data = mysqli_fetch_array($query_mysql);
+        echo var_dump($data);
+
+        ?>
+	</table>
  </body>
  </html>
