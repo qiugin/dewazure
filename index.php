@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
     <h3>Silakan Login</h3>
 
     <form method="POST" action="index.php">
-        Email : <input type="email" name="email"><br>
+        Email : <input type="text" name="email"><br>
         Password : <input type="password" name="password"><br>
         <?php echo $form_error; ?>
         <input type="submit" name="submit" value="Login">
