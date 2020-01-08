@@ -72,9 +72,9 @@
 		$query_mysql = mysqli_query($conn,"SELECT * FROM mhs_dew")or die(mysql_error());
 		$nomor = 1;
 		while($data = mysqli_fetch_array($query_mysql)){
+        echo var_dump($data);
 		?>
 		<tr>
-        var_dump($data);
 			<td><?php echo $nomor++; ?></td>
 			<td><?php echo $data['nama_dew']; ?></td>
 			<td><?php echo $data['nim_dew']; ?></td>
@@ -85,7 +85,6 @@
 			</td>
 		</tr>
 		<?php } ?>
-        var_dump($data);
 	</table>
  </body>
  </html>
