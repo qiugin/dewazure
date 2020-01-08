@@ -59,7 +59,7 @@
 
 
         $query_mysql = mysqli_query($conn,"SELECT * FROM mhs_dew")or die(mysql_error());
-        $nomor = 1;
+        $nomor = 1; 
         $data = mysqli_fetch_array($query_mysql);
         echo var_dump($data);
     
