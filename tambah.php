@@ -58,7 +58,6 @@ if( empty($_SESSION['email']) ){
             // Insert data
             $sql_insert = "INSERT INTO mhs_dew (nama_dew, nim_dew, prodi_dew) 
                         VALUES (?,?,?)";
-            header('Location: mhs.php');
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
             $stmt->bindValue(2, $email);
@@ -67,7 +66,9 @@ if( empty($_SESSION['email']) ){
         } catch(Exception $e) {
             echo "Failed: " . $e;
         }
-
+        echo "berhasil Menambahkan Data"
+    }else{
+        echo "data gagal";
     }
  ?>
  </body>
