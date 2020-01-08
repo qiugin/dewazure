@@ -5,11 +5,6 @@
 	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 </head>
 <body>
-	<div class="judul">		
-		<h1>Membuat CRUD Dengan PHP Dan MySQL</h1>
-		<h2>Menampilkan data dari database</h2>
-		<h3>www.malasngoding.com</h3>
-	</div>
 	<br/>
 
 	<h3>Data user</h3>
@@ -23,9 +18,9 @@
 		</tr>
 		<?php 
 		include "koneksi.php";
-		$query_mysql = mysqli_query($koneksi,"SELECT * FROM mhs_dew")or die(mysql_error());
+		$query_mysql = mysqli_query($koneksi,"SELECT * FROM mhs_dew")or die(mysqli_error());
 		$nomor = 1;
-		while($data = mysql_fetch_array($query_mysql)){
+		while($data = mysqli_fetch_array($query_mysql)){
 		?>
 		<tr>
 			<td><?php echo $nomor++; ?></td>
