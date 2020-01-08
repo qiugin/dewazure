@@ -1,64 +1,47 @@
-<html>
- <head>
- <Title>Registration Form</Title>
- <style type="text/css">
- 	body { background-color: #fff; border-top: solid 10px #000;
- 	    color: #333; font-size: .85em; margin: 20; padding: 20;
- 	    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
- 	}
- 	h1, h2, h3,{ color: #000; margin-bottom: 0; padding-bottom: 0; }
- 	h1 { font-size: 2em; }
- 	h2 { font-size: 1.75em; }
- 	h3 { font-size: 1.2em; }
- 	table { margin-top: 0.75em; }
- 	th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
- 	td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
- </style>
- </head>
- <body>
+<?php
+// fungsi untuk memulai session
+session_start();
 
- <?php
-    $host = "dewserver.database.windows.net";
-    $user = "dewadmin";
-    $pass = "Dewohat97";
-    $db = "yemDB";
+// variabel kosong untuk menyimpan pesan error
+$form_error = '';
 
-    try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    } catch(Exception $e) {
-        echo "Failed: " . $e;
+// cek apakah tombol sumit sudah di klik atau belum
+if(isset($_POST['submit'])){
+
+    // menyimpan data yang dikirim dari metode POST ke masing-masing variabel
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // validasi login benar atau salah
+    if($email == 'lukman@carakode.com' AND $password == 'carakode'){
+
+        // jika login benar maka email akan disimpan ke session kemudian akan di redirect ke halaman profil
+        $_SESSION['email'] = $email;
+        header('Location: profil.php');
+    }else{
+
+        // jika login salah maka variabel form_error diisi value seperti dibawah
+        // nilai variabel ini akan ditampilkan di halaman login jika salah
+        $form_error = '<p>Password atau email yang kamu masukkan salah</p>';
     }
+}
 
-        try {
-            $sql_select = "SELECT * FROM mhs_dew";
-            $stmt = $conn->query($sql_select);
-            $registrants = $stmt->fetchAll(); 
-            if(count($registrants) > 0) {
-                echo "<h2>People who are registered:</h2>";
-                echo "<table>";
-                echo "<tr><th>Name</th>";
-                echo "<th>Email</th>";
-                echo "<th>Job</th>";
-                echo "<th>Date</th></tr>";
-                foreach($registrants as $registrant) {
-                    echo "<tr><td>".$registrant['nama_dew']."</td>";
-                    echo "<td>".$registrant['nim_dew']."</td>";
-                    echo "<td>".$registrant['prodi_dew']."</td>";
-                }
-                echo "</table>";
-            } else {
-                echo "<h3>No one is currently registered.</h3>";
-            }
-        } catch(Exception $e) {
-            echo "Failed: " . $e;
-        }
+?>
+
+<!DOCTYPE html>
+<head>
+    <title>Login Sederhana Tanpa Database</title>
+</head>
+<body>
+
+    <h3>Silakan Login</h3>
+
+    <form method="POST" action="index.php">
+        Email : <input type="email" name="email"><br>
+        Password : <input type="password" name="password"><br>
+        <?php echo $form_error; ?>
+        <input type="submit" name="submit" value="Login">
+    </form>
     
-
- ?>
-
-
-
-
- </body>
- </html>
+</body>
+</html>
