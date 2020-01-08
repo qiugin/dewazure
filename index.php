@@ -74,6 +74,7 @@
 		while($data = mysqli_fetch_array($query_mysql)){
 		?>
 		<tr>
+        var_dump($data);
 			<td><?php echo $nomor++; ?></td>
 			<td><?php echo $data['nama_dew']; ?></td>
 			<td><?php echo $data['nim_dew']; ?></td>
