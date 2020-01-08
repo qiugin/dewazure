@@ -64,6 +64,8 @@ if( empty($_SESSION['username']) ){
             $nama = $_POST['nama_dew'];
             $nim = $_POST['nim_dew'];
             $prodi = $_POST['prodi_dew'];
+            $date = date("Y-m-d");
+
             // Insert data
             $sql_insert = "INSERT INTO mhs_dew (nama_dew, nim_dew, prodi_dew) 
                         VALUES (?,?,?)";
@@ -71,6 +73,8 @@ if( empty($_SESSION['username']) ){
             $stmt->bindValue(1, $nama);
             $stmt->bindValue(2, $nim);
             $stmt->bindValue(3, $prodi);
+            $stmt->bindValue(4, $date);
+
             $stmt->execute();
         } catch(Exception $e) {
             echo "Failed: " . $e;

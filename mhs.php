@@ -35,7 +35,7 @@ if( empty($_SESSION['username']) ){
 <div class="center2">
 <!-- Menampilkan isi session username -->
 <h3> Hallo Selamat Datang <?php echo $_SESSION['username']; ?> </h3>
-<a href="tambah.php"><button type="button" class="btn btn-success">Tambah Data</button></a>;
+<a href="tambah.php"><button type="button" class="btn btn-success">Tambah Data</button></a>
  <?php
     $host = "dewserver.database.windows.net";
     $user = "dewadmin";
@@ -59,10 +59,14 @@ if( empty($_SESSION['username']) ){
                 echo '<tr><th scope="col">Name</th>';
                 echo '<th scope="col">NIM</th>';
                 echo '<th scope="col">Prodi</th>';
+                echo '<th scope="col">Date</th></tr>';
+
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['nama_dew']."</td>";
                     echo "<td>".$registrant['nim_dew']."</td>";
                     echo "<td>".$registrant['prodi_dew']."</td>";
+                    echo "<td>".$registrant['date']."</td></tr>";
+
                 }
                 echo "</table>";
             } else {
