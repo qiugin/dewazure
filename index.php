@@ -84,6 +84,7 @@
 			</td>
 		</tr>
 		<?php } ?>
+        var_dump($data);
 	</table>
  </body>
  </html>
