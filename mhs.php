@@ -51,7 +51,7 @@ if( empty($_SESSION['email']) ){
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
                 echo "<h2>People who are registered:</h2>";
-                echo '<a href="tambah.php">Lihat Semua Data</a>';
+                echo '<a href="tambah.php">Tambah Data</a>';
                 
                 echo "<table>";
                 echo "<tr><th>Name</th>";

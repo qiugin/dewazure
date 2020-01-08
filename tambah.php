@@ -58,12 +58,12 @@ if( empty($_SESSION['email']) ){
             // Insert data
             $sql_insert = "INSERT INTO mhs_dew (nama_dew, nim_dew, prodi_dew) 
                         VALUES (?,?,?)";
+            header('Location: mhs.php');
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
             $stmt->bindValue(2, $email);
             $stmt->bindValue(3, $job);
             $stmt->execute();
-            header("location:mhs.php");
         } catch(Exception $e) {
             echo "Failed: " . $e;
         }
