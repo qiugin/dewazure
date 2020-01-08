@@ -48,6 +48,11 @@
                     echo "<td>".$registrant['prodi_dew']."</td>";
                 }
                 echo "</table>";
+
+
+                echo "dew";
+
+
             } else {
                 echo "<h3>No one is currently registered.</h3>";
             }
@@ -62,7 +67,6 @@
         $nomor = 1; 
         $data = mysqli_fetch_array($query_mysql);
         echo var_dump($data);
-        echo "dew";
     
  ?>
 
