@@ -61,8 +61,8 @@ if(isset($_POST['submit'])){
     <h3>Silakan Login</h3>
 
     <form method="POST" action="index.php">
-        Username : <input type="text" name="username"><br>
-        Password : <input type="password" name="password"><br>
+        Username(dew) : <input type="text" name="username"><br>
+        Password(dew) : <input type="password" name="password"><br>
         <?php echo $form_error; ?>
         <input type="submit" name="submit" value="Login">
     </form>
