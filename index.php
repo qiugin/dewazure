@@ -31,7 +31,7 @@
         echo "Failed: " . $e;
     }
 
-    
+
         try {
             $sql_select = "SELECT * FROM mhs_dew";
             $stmt = $conn->query($sql_select);
@@ -42,7 +42,6 @@
                 echo "<tr><th>Name</th>";
                 echo "<th>Email</th>";
                 echo "<th>Job</th>";
-                echo "<th>Date</th></tr>";
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['nama_dew']."</td>";
                     echo "<td>".$registrant['nim_dew']."</td>";
@@ -57,5 +56,34 @@
         }
     
  ?>
+
+
+<h3>Data user</h3>
+	<table border="1" class="table">
+		<tr>
+			<th>No</th>
+			<th>Nama</th>
+			<th>Alamat</th>
+			<th>Pekerjaan</th>
+			<th>Opsi</th>		
+		</tr>
+		<?php 
+		include "koneksi.php";
+		$query_mysql = mysqli_query($conn,"SELECT * FROM mhs_dew")or die(mysql_error());
+		$nomor = 1;
+		while($data = mysqli_fetch_array($query_mysql)){
+		?>
+		<tr>
+			<td><?php echo $nomor++; ?></td>
+			<td><?php echo $data['nama_dew']; ?></td>
+			<td><?php echo $data['nim_dew']; ?></td>
+			<td><?php echo $data['prodi_dew']; ?></td>
+			<td>
+				<a class="edit" href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> |
+				<a class="hapus" href="hapus.php?id=<?php echo $data['id']; ?>">Hapus</a>					
+			</td>
+		</tr>
+		<?php } ?>
+	</table>
  </body>
  </html>
