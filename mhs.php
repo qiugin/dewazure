@@ -42,6 +42,7 @@ if( empty($_SESSION['email']) ){
             $stmt = $conn->query($sql_select);
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
+                echo '<div class="center">';
                 echo "<h2>People who are registered:</h2>";
                 echo '<a href="tambah.php">Tambah Data</a>';
                 
@@ -56,6 +57,7 @@ if( empty($_SESSION['email']) ){
                     echo "<td>".$registrant['prodi_dew']."</td>";
                 }
                 echo "</table>";
+                echo "</div>";
             } else {
                 echo "<h3>No one is currently registered.</h3>";
             }
