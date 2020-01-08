@@ -57,7 +57,7 @@
             echo "Failed: " . $e;
         }
 
-        echo "<h3>Your're registered! v1</h3>";
+        echo "<h3>Your're registered! v4</h3>";
     } else if (isset($_POST['load_data'])) {
         try {
             $sql_select = "SELECT * FROM Registration";
